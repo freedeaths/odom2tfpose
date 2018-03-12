@@ -7,4 +7,7 @@
 <!-- Usage: static_transform_publisher x y z yaw pitch roll frame_id child_frame_id  period(milliseconds) -->
 <node pkg="tf" type="static_transform_publisher" name="gpsrtk_broadcaster" args="1 0 0 0 0 0 /map /gps 100" />
 
+<!-- translate output of swiftnav to what autoware will accept -->
+<node pkg="odom2tfpose" type="odometry2tfpose.py" name="odom2tfpose" output="screen"/>
+
 </launch>
